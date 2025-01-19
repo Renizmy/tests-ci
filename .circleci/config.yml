@@ -5,19 +5,19 @@ workflows:
   version: 2
   setup:
     jobs:
-      generate-ci:
-        docker:
-          - image: cimg/python:3.12
-        steps:
-          - run:
-              name: install dependencies
-              command: pip install jinja2
+     - generate-ci:
+         docker:
+           - image: cimg/python:3.12
+         steps:
+           - run:
+               name: install dependencies
+               command: pip install jinja2
               
 #          - run:
 #              name: generate ci
 #              command: python .circleci/generate_ci.py
               
-          - setup/config:
-            name: use-dynamic-config
-            config-path: .circleci/dynamic-ci.yml
+           - setup/config:
+             name: use-dynamic-config
+             config-path: .circleci/dynamic-ci.yml
                 
