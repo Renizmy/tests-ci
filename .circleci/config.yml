@@ -13,9 +13,9 @@ workflows:
               name: install dependencies
               command: pip install jinja2
               
-          - run:
-              name: generate ci
-              command: python .circleci/generate_ci.py
+#          - run:
+#              name: generate ci
+#              command: python .circleci/generate_ci.py
               
           - setup/config:
             name: use-dynamic-config

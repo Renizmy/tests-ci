@@ -1,0 +1,4 @@
+      - run:
+          name: Build test
+          command: |
+            echo "test"
