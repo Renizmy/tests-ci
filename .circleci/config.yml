@@ -1,7 +1,6 @@
 version: 2.1
 setup: true
 
-# Define the job
 jobs:
   generate-ci:
     docker:
@@ -13,14 +12,10 @@ jobs:
       - run:
           name: Generate CI
           command: python .circleci/generate_ci.py
-      - setup/config:
-          name: Use Dynamic Config
-          config-path: .circleci/dynamic-ci.yml
-
 
 workflows:
   version: 2
   setup:
     jobs:
-      - generate-ci
-                
+      - generate-ci:
+          config-path: .circleci/dynamic-ci.yml
