@@ -7,10 +7,21 @@ jobs:
     steps:
       - run:
           name: Hello World
-          command: echo "hello world"
+          command: echo "hello world" && sleep 10
 
 workflows:
   version: 2
   dynamic-workflow:
     jobs:
+      - say-hello
+      - say-hello
+      - say-hello
+      - say-hello
+      - say-hello
+      - say-hello
+      - say-hello
+      - say-hello
+      - say-hello
+      - say-hello
+      - say-hello
       - say-hello
