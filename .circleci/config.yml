@@ -30,7 +30,7 @@ jobs:
 
       - run:
           name: ls dir
-          command: ls -alh ls -alh .circleci/
+          command: ls -alh .circleci/
 
 workflows:
   version: 2
