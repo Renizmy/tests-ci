@@ -6,8 +6,6 @@ import yaml
 TOP_LEVEL_DIRS = [
     "external-import",
     "stream",
-    "internal-export-file",
-    "internal-import-file",
 ]
 
 # Collect subdirectories for each top-level directory
