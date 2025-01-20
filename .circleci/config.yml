@@ -49,7 +49,7 @@ jobs:
           command: ls -alh
 
       - continuation/continue:
-          configuration_path: generated_config.yml 
+          configuration_path: dynamic.yml 
 
 workflows:
   version: 2
