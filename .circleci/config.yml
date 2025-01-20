@@ -45,8 +45,8 @@ jobs:
           name: Execute Python Script
           command: python .circleci/generate_ci.py
       - run:
-          name: ls dir
-          command: ls -alh
+          name: cat
+          command: cat dynamic.yml
 
       - continuation/continue:
           configuration_path: dynamic.yml 
