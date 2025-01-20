@@ -24,6 +24,12 @@ jobs:
       - run:
           name: Execute Python Script
           command: python .circleci/generate_ci.py
+      - run:
+          name: ls dir
+          command: ls -alh
+
+      - run: ls sub dir
+        command: ls -alh .circleci/
 
 workflows:
   version: 2
