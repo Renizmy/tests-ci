@@ -39,3 +39,5 @@ workflows:
       - generate-ci
       - continuation/continue:
           configuration_path: dynamic.yml
+          requires:
+            - generate-ci
