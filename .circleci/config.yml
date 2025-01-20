@@ -32,6 +32,11 @@ jobs:
           name: ls dir
           command: ls -alh .circleci/ && sleep 10
 
+      - persist_to_workspace:
+          root: workspace
+          paths:
+            - dynamic.yml
+
 workflows:
   version: 2
   setup:
