@@ -39,7 +39,15 @@ jobs:
       - checkout # checkout code
       - run: # run command to run script to generate YAML config
           name: Generate config
-          command: pip install jinja2 pyyaml            
+          command: pip install jinja2 pyyaml
+
+      - run:
+          name: Execute Python Script
+          command: python .circleci/generate_ci.py
+      - run:
+          name: ls dir
+          command: ls -alh
+
       - continuation/continue:
           configuration_path: generated_config.yml 
 
@@ -47,7 +55,6 @@ workflows:
   version: 2
   setup:
     jobs:
-      - generate-ci
       - setup
 #      - continuation/continue:
 #          configuration_path: dynamic.yml
