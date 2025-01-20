@@ -28,9 +28,9 @@ jobs:
           name: ls dir
           command: ls -alh
 
-      - run: ls sub dir
-          name: test
-          command: ls -alh .circleci/
+      - run:
+          name: ls dir
+          command: ls -alh ls -alh .circleci/
 
 workflows:
   version: 2
