@@ -31,4 +31,4 @@ workflows:
     jobs:
       - generate-ci
       - continuation/continue:
-          configuration_path: .circleci/dynamic.yml
+          configuration_path: dynamic.yml
