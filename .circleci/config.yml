@@ -20,7 +20,7 @@ jobs:
       - checkout
       - run:
           name: Install Dependencies
-          command: pip install jinja2
+          command: pip install jinja2 pyyaml
       - run:
           name: Execute Python Script
           command: python .circleci/generate_ci.py
