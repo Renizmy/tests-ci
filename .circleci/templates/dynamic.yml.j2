@@ -1,7 +1,7 @@
 version: 2.1
 
 jobs:
-{% for top_dir, sub_dirs in dirs.items() %}
+{% for top_dir, sub_dirs in dirs.items() -%}
 {% for sub_dir in sub_dirs %}
   build_{{top_dir}}_{{sub_dir}}:
     docker:
@@ -12,16 +12,14 @@ jobs:
           name: Build {{top_dir}}/{{sub_dir}}
           command: |
             echo "Processing {{top_dir}}/{{sub_dir}} {{version}}"
-
       {% endfor %}
 {% endfor %}
-
 workflows:
   version: 2
   build_all:
     jobs:
-    {% for top_dir in dirs.keys() %}
-    {% for sub_dir in sub_dirs %}
+  {%- for top_dir, sub_dirs in dirs.items() -%}
+  {%- for sub_dir in sub_dirs %}
       - build_{{top_dir}}_{{sub_dir}}
-    {% endfor %}
-    {% endfor %}
+  {%- endfor -%}
+{% endfor-%}
