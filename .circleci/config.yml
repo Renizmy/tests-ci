@@ -13,9 +13,22 @@ jobs:
           name: Import and Trigger Dynamic Config
           command: echo "Using dynamic.yml for workflow"
 
+  generate-ci:
+    docker:
+      - image: cimg/python:3.10
+    steps:
+      - checkout
+      - run:
+          name: Install Dependencies
+          command: pip install jinja2
+      - run:
+          name: Execute Python Script
+          command: python .circleci/generate_ci.py
+
 workflows:
   version: 2
   setup:
     jobs:
+      - generate-ci
       - continuation/continue:
           configuration_path: .circleci/dynamic.yml
