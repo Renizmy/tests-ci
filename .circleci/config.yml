@@ -32,14 +32,23 @@ jobs:
           name: ls dir
           command: ls -alh .circleci/ && sleep 10
 
+  setup:
+    docker:
+      - image: cimg/python:3.10
+    steps:
+      - checkout # checkout code
+      - run: # run command to run script to generate YAML config
+          name: Generate config
+          command: pip install jinja2 pyyaml            
       - continuation/continue:
-          configuration_path: dynamic.yml
+          configuration_path: generated_config.yml 
 
 workflows:
   version: 2
   setup:
     jobs:
       - generate-ci
+      - setup
 #      - continuation/continue:
 #          configuration_path: dynamic.yml
 #          requires:
