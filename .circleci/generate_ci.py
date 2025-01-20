@@ -21,7 +21,7 @@ for top_dir in TOP_LEVEL_DIRS:
 # Load the Jinja template
 template_path = ".circleci/templates/dynamic.yml.j2"
 
-with open("vars.yml", "r") as yaml_file:
+with open(".circleci/vars.yml", "r") as yaml_file:
     images = yaml.safe_load(yaml_file)
 
 with open(template_path, "r") as file:
